@@ -146,7 +146,7 @@ class PDFHandler(FileSystemEventHandler):
 
 if __name__ == "__main__":
     # Monitoring for ZIP files
-    monitor_path = r"C:\Users\drakk\Downloads"
+    monitor_path = r"path to directory"
     zip_file_path = os.path.join(monitor_path, "download.zip")
     pdf_file_path = os.path.join(monitor_path, "photos.pdf")
     event_handler_zip = MyHandler(zip_file_path)
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     observer_zip.schedule(event_handler_zip, path=monitor_path, recursive=False)
 
     # Monitoring for PDF files to rename
-    excel_path = r"C:\Users\drakk\Downloads\location.xlsx"
+    excel_path = r"C<your path to file goes here>location.xlsx"
     event_handler_pdf = PDFHandler(excel_path, monitor_path)
     observer_pdf = Observer()
     observer_pdf.schedule(event_handler_pdf, path=monitor_path, recursive=False)
